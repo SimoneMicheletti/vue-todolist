@@ -1,4 +1,4 @@
-/* Regole Generali */
+/* General */
 
 * {
   box-sizing: border-box;
@@ -18,7 +18,17 @@ img {
   align-items: center;
 }
 
-/* Regole Form */
+.active {
+  display: block;
+}
+
+.not-active {
+  display: none;
+}
+
+
+
+/* Input Element */
 
 #app>div:nth-child(2)>* {
   padding: 8px 20px;
@@ -39,7 +49,9 @@ button:hover {
   cursor: pointer;
 }
 
-/* Regole ToDo List */
+
+
+/* ToDo list */
 
 #app>div:last-child {
   width: 70vw;
@@ -65,8 +77,17 @@ button:hover {
   margin-bottom: 20px;
 }
 
+.blue {
+  color: #3d7eff;
+  font-weight: bold;
+}
+
+/* ToDo list - remove */
+
 .remove {
   transition: 0.2s;
+  width: 20px;
+  text-align: center;
 }
 
 .remove:hover {
@@ -75,7 +96,11 @@ button:hover {
   transform: scale(1.2);
 }
 
+/* ToDo list - doble */
+
 .doble {
+  width: 20px;
+  text-align: center;
   position: relative;
   transition: 0.2s;
 }
@@ -88,11 +113,19 @@ button:hover {
   transition: 0.2s;
 }
 
+.doble>i:hover {
+  transform: scale(1.2);
+  color: #3d7eff;
+}
+
+/* ToDo list -> doble -> alert */
+
 .alert {
+  z-index: 900;
   display: none;
   position: absolute;
-  left: calc(-100px + 50%);
-  top: calc(100% + 5px);
+  left: -210px;
+  top: -11px;
   width: 200px;
   background-color: lightgrey;
   border: 1px solid #3d7eff;
@@ -120,21 +153,4 @@ button:hover {
 .alert>i:hover {
   cursor: pointer;
   transform: scale(1.2);
-}
-
-/* .doble:hover .alert {
-  display: block;
-}
-
-.doble:hover>i {
-  display: none;
-} */
-
-.active {
-  display: block;
-}
-
-.blue {
-  color: #3d7eff;
-
 }

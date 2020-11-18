@@ -12,20 +12,28 @@
 
     <div id="app">
 
+      <!-- Logo -->
       <img src="https://www.boolean.careers/images/misc/logo.png" alt="">
 
+      <!-- Input new element in ToDo list -->
       <div>
         <input v-model="inputElement" placeholder="Aggiungi nuovo ToDo" @keypress.enter="addElement">
         <button type="button" @click="addElement">AGGIUNGI</button>
       </div>
 
+      <!-- ToDo list -->
       <div>
         <div class="element-to-do" v-for="(element,i) in arrayElementToDo">
-          <div class="argomento">
+
+          <!-- Element content -->
+          <div :class="{'blue': classActive[i]}">
             {{arrayElementToDo[i]}}
           </div>
+
+          <!-- Double element alert -->
           <div class="doble" v-if="doble[i] && i>0" @click="classActiveOnOff(i)">
             <i :class="['fas fa-exclamation-circle', {'blue': classActive[i]}]" ></i>
+            <!-- Alert -->
             <div :class="['alert', {'active': classActive[i]}]">
               <div>
                 Attenzione
@@ -37,9 +45,12 @@
               <i class="fas fa-times-circle" @click="removeElement(i)"></i>
             </div>
           </div>
-          <div class="remove" @click="removeElement(i)">
-            <i class="fas fa-times"></i>
+
+          <!-- Remove Element -->
+          <div class="remove" :class="{'not-active': doble[i]}" @click="removeElement(i)">
+            <i class="fas fa-times" ></i>
           </div>
+
         </div>
       </div>
 
