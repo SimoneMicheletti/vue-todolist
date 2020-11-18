@@ -9,8 +9,10 @@ var app = new Vue({
   methods: {
 
     addElement: function() {
-      this.arrayElementToDo.push(this.inputElement)
-      this.inputElement = ""
+      if (this.inputElement != "") {
+        this.arrayElementToDo.push(this.inputElement)
+        this.inputElement = ""
+      }
     },
 
     removeElement: function(indexElement) {

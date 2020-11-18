@@ -1,7 +1,10 @@
+/* Regole Generali */
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: 'Lato', sans-serif;
 }
 
 img {
@@ -15,11 +18,33 @@ img {
   align-items: center;
 }
 
+/* Regole Form */
+
+form>* {
+  padding: 8px 20px;
+  border-radius: 8px;
+}
+
+form>input {
+  width: 400px;
+  margin-right: 10px;
+}
+
+form>input:focus {
+  border-color: lightgreen;
+}
+
+form>button:hover {
+  background-color: lightgreen;
+  cursor: pointer;
+}
+
+/* Regole ToDo List */
+
 #app>div {
   width: 70vw;
   margin-top: 30px;
-  background-color: lightgrey;
-  padding: 20px;
+  background-color: #f2f2f2;
   border-radius: 15px;
 }
 
@@ -27,13 +52,20 @@ img {
   display: flex;
   justify-content: space-between;
   padding: 10px;
+  margin: 0 20px;
   border-bottom: 1px solid grey;
+}
+
+.element-to-do:first-child {
+  margin-top: 20px;
 }
 
 .element-to-do:last-child {
   border-bottom: 0;
+  margin-bottom: 20px;
 }
 
-.remove {
+.remove:hover {
+  color: red;
   cursor: pointer;
 }

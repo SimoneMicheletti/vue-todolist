@@ -2,6 +2,8 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&display=swap">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <title>Todoolean con Vue</title>
@@ -14,20 +16,18 @@
 
       <form>
         <input v-model="inputElement" placeholder="Aggiungi nuovo ToDo">
-        <button type="button" @click="addElement">Aggiungi</button>
+        <button type="button" @click="addElement">AGGIUNGI</button>
       </form>
 
       <div>
-
         <div class="element-to-do" v-for="(element,i) in arrayElementToDo">
           <div class="argomento">
             {{arrayElementToDo[i]}}
           </div>
           <div class="remove" @click="removeElement(i)">
-            x
+            <i class="fas fa-times"></i>
           </div>
         </div>
-
       </div>
 
     </div>
