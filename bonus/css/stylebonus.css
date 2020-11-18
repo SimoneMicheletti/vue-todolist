@@ -69,11 +69,6 @@ button:hover {
   margin-bottom: 20px;
 }
 
-.blue {
-  color: #3d7eff;
-  font-weight: bold;
-}
-
 /* ToDo list - remove */
 
 .remove {
@@ -156,4 +151,9 @@ button:hover {
 
 .not-active {
   display: none;
+}
+
+.blue {
+  color: #3d7eff;
+  font-weight: bold;
 }

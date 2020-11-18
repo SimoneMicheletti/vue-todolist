@@ -21,34 +21,46 @@ var app = new Vue({
         this.arrayElementToDo.push(this.inputElement);
         this.classActive.push(false);
         this.inputElement = "";
+        this.resetActiveClass();
+        console.log(this.arrayElementToDo);
+        console.log(this.doble);
         console.log(this.classActive);
+
       }
     },
 
     // Function remove element
     removeElement: function(indexElement) {
       this.arrayElementToDo.splice(indexElement, 1);
-      this.doble.splice(indexElement, 1)
-      Vue.set(this.classActive, indexElement, false)
-      this.classActive.splice(indexElement, 1)
+      this.doble.splice(indexElement, 1);
+      this.classActive.splice(indexElement, 1);
+      Vue.set(this.classActive, indexElement, false);
+      console.log(this.arrayElementToDo);
+      console.log(this.doble);
+      console.log(this.classActive);
     },
 
     // Function to manage the "doble" class
     removeDoble: function(indexElement) {
-      this.doble[indexElement] = false
+      Vue.set(this.doble, indexElement, false);
+      this.resetActiveClass();
     },
 
     // Function to manage the "active" class
     classActiveOnOff: function(indexElement) {
       if (this.classActive[indexElement] === false) {
-        for (var i = 0; i < this.classActive.length; i++) {
-          Vue.set(this.classActive, i, false)
-        }
-        Vue.set(this.classActive, indexElement, true)
+        this.resetActiveClass();
+        Vue.set(this.classActive, indexElement, true);
       } else {
-        Vue.set(this.classActive, indexElement, false)
+        Vue.set(this.classActive, indexElement, false);
       }
-      console.log(this.classActive);
+    },
+
+    // Function to reset "active" class
+    resetActiveClass: function() {
+      for (var i = 0; i < this.classActive.length; i++) {
+        Vue.set(this.classActive, i, false);
+      }
     }
 
   }
