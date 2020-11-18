@@ -14,10 +14,10 @@
 
       <img src="https://www.boolean.careers/images/misc/logo.png" alt="">
 
-      <form>
-        <input v-model="inputElement" placeholder="Aggiungi nuovo ToDo">
+      <div>
+        <input v-model="inputElement" placeholder="Aggiungi nuovo ToDo" @keypress.enter="addElement">
         <button type="button" @click="addElement">AGGIUNGI</button>
-      </form>
+      </div>
 
       <div>
         <div class="element-to-do" v-for="(element,i) in arrayElementToDo">
