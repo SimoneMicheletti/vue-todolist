@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>Todoolean con Vue</title>
+  </head>
+  <body>
+
+    <div id="app">
+
+      <img src="https://www.boolean.careers/images/misc/logo.png" alt="">
+
+      <form>
+        <input v-model="inputElement" placeholder="Aggiungi nuovo ToDo">
+        <button type="button" @click="addElement">Aggiungi</button>
+      </form>
+
+      <div>
+
+        <div class="element-to-do" v-for="(element,i) in arrayElementToDo">
+          <div class="argomento">
+            {{arrayElementToDo[i]}}
+          </div>
+          <div class="remove" @click="removeElement(i)">
+            x
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

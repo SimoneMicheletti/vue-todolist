@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  height: 70px;
+  margin: 30px;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#app>div {
+  width: 70vw;
+  margin-top: 30px;
+  background-color: lightgrey;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.element-to-do {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid grey;
+}
+
+.element-to-do:last-child {
+  border-bottom: 0;
+}
+
+.remove {
+  cursor: pointer;
+}
