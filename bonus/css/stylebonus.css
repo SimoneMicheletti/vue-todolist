@@ -1,0 +1,140 @@
+/* Regole Generali */
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+img {
+  height: 70px;
+  margin: 30px;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Regole Form */
+
+#app>div:nth-child(2)>* {
+  padding: 8px 20px;
+  border-radius: 8px;
+}
+
+input {
+  width: 400px;
+  margin-right: 10px;
+}
+
+input:focus {
+  border-color: lightgreen;
+}
+
+button:hover {
+  background-color: lightgreen;
+  cursor: pointer;
+}
+
+/* Regole ToDo List */
+
+#app>div:last-child {
+  width: 70vw;
+  margin-top: 30px;
+  background-color: #f2f2f2;
+  border-radius: 15px;
+}
+
+.element-to-do {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 0 20px;
+  border-bottom: 1px solid grey;
+}
+
+.element-to-do:first-child {
+  margin-top: 20px;
+}
+
+.element-to-do:last-child {
+  border-bottom: 0;
+  margin-bottom: 20px;
+}
+
+.remove {
+  transition: 0.2s;
+}
+
+.remove:hover {
+  color: red;
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.doble {
+  position: relative;
+  transition: 0.2s;
+}
+
+.doble:hover {
+  cursor: pointer;
+}
+
+.doble>i {
+  transition: 0.2s;
+}
+
+.alert {
+  display: none;
+  position: absolute;
+  left: calc(-100px + 50%);
+  top: calc(100% + 5px);
+  width: 200px;
+  background-color: lightgrey;
+  border: 1px solid #3d7eff;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.alert>i:nth-child(3) {
+  font-size: 20px;
+  color: green;
+  margin-right: 10px;
+  transition: 0.2s;
+}
+
+.alert>i:nth-child(4) {
+  font-size: 20px;
+  color: red;
+  transition: 0.2s;
+}
+
+.alert>div:nth-child(2) {
+  margin: 10px 0;
+}
+
+.alert>i:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+/* .doble:hover .alert {
+  display: block;
+}
+
+.doble:hover>i {
+  display: none;
+} */
+
+.active {
+  display: block;
+}
+
+.blue {
+  color: #3d7eff;
+
+}
