@@ -20,6 +20,7 @@ var app = new Vue({
         this.arrayElementToDo.push(this.inputElement);
         this.classActive.push(false);
         this.inputElement = "";
+        console.log(this.classActive);
       }
     },
 
@@ -40,6 +41,7 @@ var app = new Vue({
       } else {
         this.classActive[indexElement] = false
       }
+      console.log(this.classActive);
     }
 
   }
