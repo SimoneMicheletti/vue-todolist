@@ -10,22 +10,27 @@ var app = new Vue({
 
     // Function add element
     addElement: function() {
-      if (this.inputElement.name != "") {
+      if (this.inputElement != "") {
 
         let newElement = {};
         newElement.name = this.inputElement;
         newElement.doble = false;
         newElement.classActive = false;
+        newElement.isAdded = true;
 
+        // check doble
         this.arrayElementToDo.forEach((item) => {
           if (item.name === newElement.name ) {
             newElement.doble = true;
           }
         });
 
+        // push and clean
         this.arrayElementToDo.push(newElement);
         this.inputElement = "";
+        setTimeout(() => Vue.delete(newElement, 'isAdded'), 100);
         this.resetActiveClass();
+
       }
     },
 
