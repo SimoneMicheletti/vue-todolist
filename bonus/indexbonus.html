@@ -21,6 +21,11 @@
         <button type="button" @click="addElement">AGGIUNGI</button>
       </div>
 
+      <!-- Lista vuota -->
+      <div id="free" :class="[{'none': arrayElementToDo.length > 0}]">
+        La tua lista ToDo è vuota
+      </div>
+
       <!-- ToDo list -->
       <div>
         <div :class="['element-to-do', {'active-background':arrayElementToDo[i].classActive}]" v-for="(element,i) in arrayElementToDo">

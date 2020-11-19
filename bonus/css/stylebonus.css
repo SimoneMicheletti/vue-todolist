@@ -4,7 +4,11 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+body {
   font-family: 'Lato', sans-serif;
+  color: #001533;
 }
 
 img {
@@ -44,6 +48,11 @@ button:hover {
 
 
 /* ToDo list */
+
+#app>div:nth-child(3) {
+  margin-top: 50px;
+  font-size: 20px;
+}
 
 #app>div:last-child {
   width: 70vw;
@@ -93,10 +102,6 @@ button:hover {
   transition: 0.2s;
 }
 
-.doble:hover {
-  cursor: pointer;
-}
-
 .doble>i {
   transition: 0.2s;
 }
@@ -104,6 +109,7 @@ button:hover {
 .doble>i:hover {
   transform: scale(1.2);
   color: #3d7eff;
+  cursor: pointer;
 }
 
 /* ToDo list -> doble -> alert */
@@ -159,4 +165,8 @@ button:hover {
 .active-background {
   background-image: linear-gradient(#f2f2f2, lightgrey);
   border-bottom: 1px solid #3d7eff !important;
+}
+
+.none {
+  display: none;
 }
