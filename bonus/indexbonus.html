@@ -28,7 +28,7 @@
 
       <!-- ToDo list -->
       <div>
-        <div :class="['element-to-do', {'active-background':arrayElementToDo[i].classActive}]" v-for="(element,i) in arrayElementToDo">
+        <div :class="['element-to-do', {'active-background':arrayElementToDo[i].classActive}, {'deleted': arrayElementToDo[i].isDeleted}]" v-for="(element,i) in arrayElementToDo">
 
           <!-- Element content -->
           <div :class="{'blue': arrayElementToDo[i].classActive && arrayElementToDo[i].doble}">

@@ -17,11 +17,11 @@ var app = new Vue({
         newElement.doble = false;
         newElement.classActive = false;
 
-        for (var i = 0; i < this.arrayElementToDo.length; i++) {
-          if (this.arrayElementToDo[i].name === newElement.name ) {
+        this.arrayElementToDo.forEach((item) => {
+          if (item.name === newElement.name ) {
             newElement.doble = true;
           }
-        }
+        });
 
         this.arrayElementToDo.push(newElement);
         this.inputElement = "";
@@ -31,7 +31,8 @@ var app = new Vue({
 
     // Function remove element
     removeElement: function(indexElement) {
-      Vue.delete(this.arrayElementToDo, indexElement)
+      Vue.set(this.arrayElementToDo[indexElement], "isDeleted", true)
+      setTimeout(() => Vue.delete(this.arrayElementToDo, indexElement), 100);
       this.resetActiveClass();
     },
 
@@ -53,9 +54,7 @@ var app = new Vue({
 
     // Function to reset "active" class
     resetActiveClass: function() {
-      for (var i = 0; i < this.arrayElementToDo.length; i++) {
-        this.arrayElementToDo[i].classActive = false
-      }
+      this.arrayElementToDo.forEach((item) => item.classActive = false);
     }
   }
 })
