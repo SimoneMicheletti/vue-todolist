@@ -33,11 +33,11 @@ input {
 }
 
 input:focus {
-  border-color: lightgreen;
+  border-color: #00e165;
 }
 
 button:hover {
-  background-color: lightgreen;
+  background-color: #00e165;
   cursor: pointer;
 }
 
@@ -72,6 +72,7 @@ button:hover {
 /* ToDo list - remove */
 
 .remove {
+  display: none;
   transition: 0.2s;
   width: 20px;
   text-align: center;
@@ -112,11 +113,12 @@ button:hover {
   display: none;
   position: absolute;
   left: -210px;
-  top: -11px;
+  top: 29px;
   width: 200px;
   background-color: lightgrey;
   border: 1px solid #3d7eff;
-  border-radius: 15px;
+  border-radius: 0 0 15px 15px;
+  border-top: 0;
   padding: 10px;
 }
 
@@ -149,11 +151,12 @@ button:hover {
   display: block;
 }
 
-.not-active {
-  display: none;
-}
-
 .blue {
   color: #3d7eff;
   font-weight: bold;
+}
+
+.active-background {
+  background-image: linear-gradient(#f2f2f2, lightgrey);
+  border-bottom: 1px solid #3d7eff !important;
 }

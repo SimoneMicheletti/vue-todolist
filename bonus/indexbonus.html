@@ -23,7 +23,7 @@
 
       <!-- ToDo list -->
       <div>
-        <div class="element-to-do" v-for="(element,i) in arrayElementToDo">
+        <div :class="['element-to-do', {'active-background':arrayElementToDo[i].classActive}]" v-for="(element,i) in arrayElementToDo">
 
           <!-- Element content -->
           <div :class="{'blue': arrayElementToDo[i].classActive && arrayElementToDo[i].doble}">
@@ -47,7 +47,7 @@
           </div>
 
           <!-- Remove Element -->
-          <div class="remove" :class="{'not-active': arrayElementToDo[i].doble && i>0}" @click="removeElement(i)">
+          <div :class="['remove', {'active': !arrayElementToDo[i].doble || i==0}]" @click="removeElement(i)">
             <i class="fas fa-times" ></i>
           </div>
 
